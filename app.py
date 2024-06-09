@@ -6,10 +6,13 @@
 #    By: etovaz <etovaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 17:34:03 by codespace         #+#    #+#              #
-#    Updated: 2024/06/09 19:31:53 by etovaz           ###   ########.fr        #
+#    Updated: 2024/06/09 20:17:38 by etovaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import os
 import streamlit as st
 from crewai import Crew, Process
