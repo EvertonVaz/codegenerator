@@ -1,15 +1,69 @@
 ```c
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-size_t ft_strnstr(const char *haystack, const char *needle, size_t len) {
-    size_t i = 0;
-    while (i < len) {
-        if (strncmp(haystack + i, needle, strlen(needle)) == 0) {
-            return i;
+char **ft_split(char *str, char *charset) {
+    int len = strlen(str);
+    int charset_len = strlen(charset);
+    char *str_copy = malloc((len + 1) * sizeof(char));
+    strcpy(str_copy, str);
+    char *result = malloc((len + 1) * sizeof(char));
+    *result = '\0';
+    char *p = str_copy;
+    char *q = result;
+    int j = 0;
+    while (*p != '\0') {
+        int i = 0;
+        while (*p != '\0' && !strchr(charset, *p))
+            p++;
+        if (*p != '\0') {
+            *p = '\0';
+            *(p + 1) = '\0';
+            p++;
         }
-        i++;
+        if (i == 0)
+            strcpy(q, result);
+        q += strlen(q);
+        q--;
+        q--;
+        while (*q != '\0') {
+            if (*q == ' ')
+                *q = '\0';
+            q--;
+        }
+        q--;
+        while (*q != '\0') {
+            if (*q == ' ')
+                *q = '\0';
+            q--;
+        }
+        q--;
+        q--;
+        while (*q != '\0') {
+            if (*q == ' ')
+                *q = '\0';
+            q--;
+        }
+        *q = '\0';
+        p = str_copy;
+        while (*p != '\0') {
+            if (*p == ' ')
+                p++;
+            else
+                break;
+        }
+        j++;
     }
-    return -1;
+    char **result_array = malloc(j * sizeof(char *));
+    int i;
+    for (i = 0; i < j; i++) {
+        result_array[i] = malloc((strlen(result) + 1) * sizeof(char));
+        strcpy(result_array[i], result);
+        result_array[i][strlen(result)] = '\0';
+    }
+    return result_array;
 }
 ```
-Este código segue as mesmas convenções de formatação, nomenclatura e estrutura do código do usuário, garantindo que ele se integre perfeitamente ao estilo de código do usuário.
+
+This code follows the same conventions of formatting, naming, and structure as the user's code in their GitHub repository.

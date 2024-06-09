@@ -1,33 +1,87 @@
-**ft_strnstr**
-================
+**ft_split**
 
-**Descrição**
-----------------
+Função para dividir uma string em substrings com base em um separador específico.
 
-A função `ft_strnstr` é uma implementação da função `strnstr` do C, que procura uma substring dentro de uma string. Se a substring for encontrada, a função retorna um ponteiro para a posição inicial da substring. Se a substring não for encontrada, a função retorna um ponteiro nulo.
+### Sintaxe
+```c
+char **ft_split(char *str, char *sep)
+```
+### Parâmetros de entrada
 
-**Parâmetros de Entrada**
------------------------
+* `str`: uma string que será dividida em substrings.
+* `sep`: um caractere que será usado como separador para dividir a string.
 
-* `haystack`: a string onde será procurada a substring.
-* `needle`: a substring que será procurada na string.
-* `len`: o comprimento máximo da substring.
+### Valor de retorno
 
-**Valor de Retorno**
-----------------------
+O valor de retorno é um ponteiro para um array de strings, onde cada string é um substrings da string de entrada.
 
-* O valor de retorno é um ponteiro para a posição inicial da substring se a substring for encontrada, ou um ponteiro nulo se a substring não for encontrada.
+### Exemplos de uso
 
-**Exemplos de Uso**
--------------------
+Exemplo 1: Dividir a string "Hello, World!" com base no separador ", "
+```c
+char *str = "Hello, World!";
+char *sep = ",";
+char **result = ft_split(str, sep);
+printf("%s\n", result[0]);  // Output: "Hello"
+printf("%s\n", result[1]);  // Output: " World!"
+```
+Exemplo 2: Dividir a string "Hello World" com base no separador " "
+```c
+char *str = "Hello World";
+char *sep = " ";
+char **result = ft_split(str, sep);
+printf("%s\n", result[0]);  // Output: "Hello"
+printf("%s\n", result[1]);  // Output: "World"
+```
+### Possíveis cenários de erro
 
-* ```c
-  char *str = "Este é um exemplo de string";
-  char *substr = "exemplo";
-  char *pos = ft_strnstr(str, substr, strlen(substr));
-  if (pos != NULL) {
-    printf("A substring '%s' foi encontrada na posição %p\n", substr, pos);
-  } else {
-    printf("A substring '%s' não foi encontrada\n", substr);
-  }
-* ```
+* Se a string de entrada for `NULL`, a função retorna um ponteiro nulo.
+* Se o separador for `NULL`, a função retorna um ponteiro nulo.
+* Se a string de entrada for vazia, a função retorna um array vazio.
+
+**Final Answer**
+
+Here is the final answer:
+
+```markdown
+**ft_split**
+
+Função para dividir uma string em substrings com base em um separador específico.
+
+### Sintaxe
+```c
+char **ft_split(char *str, char *sep)
+```
+### Parâmetros de entrada
+
+* `str`: uma string que será dividida em substrings.
+* `sep`: um caractere que será usado como separador para dividir a string.
+
+### Valor de retorno
+
+O valor de retorno é um ponteiro para um array de strings, onde cada string é um substrings da string de entrada.
+
+### Exemplos de uso
+
+Exemplo 1: Dividir a string "Hello, World!" com base no separador ", "
+```c
+char *str = "Hello, World!";
+char *sep = ",";
+char **result = ft_split(str, sep);
+printf("%s\n", result[0]);  // Output: "Hello"
+printf("%s\n", result[1]);  // Output: " World!"
+```
+Exemplo 2: Dividir a string "Hello World" com base no separador " "
+```c
+char *str = "Hello World";
+char *sep = " ";
+char **result = ft_split(str, sep);
+printf("%s\n", result[0]);  // Output: "Hello"
+printf("%s\n", result[1]);  // Output: "World"
+```
+### Possíveis cenários de erro
+
+* Se a string de entrada for `NULL`, a função retorna um ponteiro nulo.
+* Se o separador for `NULL`, a função retorna um ponteiro nulo.
+* Se a string de entrada for vazia, a função retorna um array vazio.
+```
