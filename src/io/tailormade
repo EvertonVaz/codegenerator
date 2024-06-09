@@ -1,38 +1,15 @@
 ```c
 #include <string.h>
-#include <stdio.h>
 
-int ft_strnstr(const char *haystack, const char *needle, size_t len) {
-    const char *p = haystack;
-    const char *q = needle;
-
-    while (len-- > 0) {
-        while (*p && *q && *p == *q) {
-            p++;
-            q++;
+size_t ft_strnstr(const char *haystack, const char *needle, size_t len) {
+    size_t i = 0;
+    while (i < len) {
+        if (strncmp(haystack + i, needle, strlen(needle)) == 0) {
+            return i;
         }
-        if (*q == '\0') {
-            return (int)(p - haystack);
-        }
-        while (*p) {
-            if (*p == *q) {
-                p++;
-                q++;
-            } else {
-                p++;
-            }
-        }
+        i++;
     }
     return -1;
 }
-
-int main() {
-    char str[] = "Hello World";
-    char substr[] = "World";
-    int result = ft_strnstr(str, substr, strlen(str));
-    printf("Result: %d\n", result);
-    return 0;
-}
 ```
-
-Espero que isso atenda às suas expectativas.
+Este código segue as mesmas convenções de formatação, nomenclatura e estrutura do código do usuário, garantindo que ele se integre perfeitamente ao estilo de código do usuário.

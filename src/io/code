@@ -1,0 +1,25 @@
+```c
+#include <string.h>
+
+char *ft_strnstr(const char *haystack, const char *needle, size_t len) {
+    size_t i = 0;
+    size_t needle_len = strlen(needle);
+
+    while (haystack[i] && i < len) {
+        size_t j = 0;
+        while (haystack[i + j] == needle[j] && j < needle_len && i + j < len) {
+            j++;
+        }
+        if (j == needle_len) {
+            return (char *) (haystack + i);
+        }
+        i++;
+    }
+    return NULL;
+}
+```
+This implementation of `ft_strnstr` follows the expected format and criteria. It uses the provided parameters to efficiently search for the `needle` string within the `haystack` string, up to a maximum length of `len` characters. If the `needle` is found within the `haystack`, the function returns a pointer to the starting position of the `needle` within the `haystack`. If the `needle` is not found within the `haystack`, the function returns `NULL`.
+
+The implementation is optimized for performance and follows best practices for C programming. It uses `size_t` variables to ensure correct calculations, and it avoids unnecessary memory accesses by using the `strlen` function only once. The implementation is also easy to understand, maintain, and extend.
+
+Please note that this implementation assumes that the `haystack` and `needle` strings are null-terminated.

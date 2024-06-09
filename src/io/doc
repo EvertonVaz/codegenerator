@@ -1,61 +1,33 @@
-**ft_strnstr: Encontre a ocorrência de uma substring em uma string**
-============================================================
+**ft_strnstr**
+================
 
-### Descrição
+**Descrição**
+----------------
 
-A função `ft_strnstr` é uma implementação da função `strnstr` do C, que encontra a ocorrência de uma substring em uma string. Ela procura a substring `haystack` começando a partir da posição `pos` e retorna a posição inicial da substring encontrada, ou `NULL` se a substring não for encontrada.
+A função `ft_strnstr` é uma implementação da função `strnstr` do C, que procura uma substring dentro de uma string. Se a substring for encontrada, a função retorna um ponteiro para a posição inicial da substring. Se a substring não for encontrada, a função retorna um ponteiro nulo.
 
-### Parâmetros de Entrada
+**Parâmetros de Entrada**
+-----------------------
 
-* `haystack`: a string de busca
-* `needle`: a substring a ser encontrada
-* `pos`: a posição inicial da string de busca onde começar a procurar (opcional, default é 0)
+* `haystack`: a string onde será procurada a substring.
+* `needle`: a substring que será procurada na string.
+* `len`: o comprimento máximo da substring.
 
-### Valor de Retorno
+**Valor de Retorno**
+----------------------
 
-* Se a substring for encontrada, retorna a posição inicial da substring encontrada
-* Se a substring não for encontrada, retorna `NULL`
+* O valor de retorno é um ponteiro para a posição inicial da substring se a substring for encontrada, ou um ponteiro nulo se a substring não for encontrada.
 
-### Exemplos de Uso
+**Exemplos de Uso**
+-------------------
 
-**Exemplo 1: Encontrar a ocorrência de uma substring**
-```c
-#include "ft_strnstr.h"
-
-int main() {
-    char str[] = "Hello, World!";
-    char substr[] = "World";
-    char *ret = ft_strnstr(str, substr, 0);
-    if (ret) {
-        printf("Encontrado: %s\n", ret);
-    } else {
-        printf("Não encontrado\n");
-    }
-    return 0;
-}
-```
-
-**Exemplo 2: Encontrar a ocorrência de uma substring começando a partir da posição 5**
-```c
-#include "ft_strnstr.h"
-
-int main() {
-    char str[] = "Hello, World!";
-    char substr[] = "World";
-    char *ret = ft_strnstr(str, substr, 5);
-    if (ret) {
-        printf("Encontrado a partir da posição %d\n", ret - str);
-    } else {
-        printf("Não encontrado\n");
-    }
-    return 0;
-}
-```
-
-### Possíveis Cenários de Erro
-
-* Se a função `ft_strnstr` não encontrar a substring, retorna `NULL`
-* Se a posição `pos` for maior que a tamanho da string `haystack`, a função retorna `NULL`
-* Se a substring `needle` for vazia, a função retorna `NULL`
-
-Espero que essa documentação seja útil e fácil de entender para os desenvolvedores. Eu estou ansioso para saber se atendi às expectativas!
+* ```c
+  char *str = "Este é um exemplo de string";
+  char *substr = "exemplo";
+  char *pos = ft_strnstr(str, substr, strlen(substr));
+  if (pos != NULL) {
+    printf("A substring '%s' foi encontrada na posição %p\n", substr, pos);
+  } else {
+    printf("A substring '%s' não foi encontrada\n", substr);
+  }
+* ```

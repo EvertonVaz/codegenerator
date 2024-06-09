@@ -6,7 +6,7 @@
 #    By: etovaz <etovaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 17:34:03 by codespace         #+#    #+#              #
-#    Updated: 2024/06/09 18:12:12 by etovaz           ###   ########.fr        #
+#    Updated: 2024/06/09 19:31:53 by etovaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,6 +99,4 @@ if st.button("Gerar"):
         st.write(f"**Code Reviewer:**\n{review}")
     with tabs[3]:
         st.write(f"**Tailormade:**\n{tailormade}")
-    with tabs[4]:
-        st.write(f"**Doc Emmet:**\n{doc}")
 
