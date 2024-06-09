@@ -1,0 +1,31 @@
+## Função Raycasting
+
+### Descrição
+
+A função `raycasting` é uma implementação de um algoritmo de visibilidade que determina se um ponto em 3D está visível a partir de um ponto de vista.
+
+### Parâmetros
+
+* Nenhum parâmetro é necessário para a chamada da função `raycasting`.
+
+### Retorno
+
+A função `raycasting` não retorna qualquer valor.
+
+### Exemplos
+
+```c
+int main() {
+    // Chamada da função
+    raycasting();
+
+    return 0;
+}
+```
+
+### Possíveis Erros
+
+* Se o ponto de vista estiver fora do escopo da cena, a função `raycasting` pode não funcionar corretamente.
+* Se o ponto de vista estiver muito distante do objeto, a função `raycasting` pode não ser capaz de detectar a visibilidade.
+
+Note: A documentação acima está incompleta, pois o código C fornecido não contém a implementação da função `raycasting`. Para obter uma documentação completa, é necessário fornecer o código da função `raycasting`.

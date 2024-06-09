@@ -1,2 +1,3 @@
-# codegenerator
-repositorio criado para a resolução da micro imersao da 42sp
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/vetsGWLg)
+# micro-imersao-genai
+micro-Imersão em GenAI

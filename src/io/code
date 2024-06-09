@@ -1,0 +1,42 @@
+**
+```c
+#include <stdio.h>
+#include <math.h>
+
+// Function to calculate the distance between two points
+float distance(float x1, float y1, float x2, float y2) {
+    return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2);
+}
+
+// Function to perform raycasting
+void raycasting(int width, int height, float fov, float distance) {
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            // Calculate the ray direction
+            float ray_dir_x = (2 * (x + 0.5) / width - 1) * tan(fov / 2);
+            float ray_dir_y = (1 - (y + 0.5) / height) * tan(fov / 2);
+
+            // Perform raycasting
+            float intersect_distance = distance(0, 0, ray_dir_x, ray_dir_y);
+            printf("Raycasting at (%d, %d): intersects at distance %f\n", x, y, intersect_distance);
+        }
+    }
+}
+
+int main() {
+    int width = 640;
+    int height = 480;
+    float fov = 60.0f;
+    float distance = 10.0f;
+
+    raycasting(width, height, fov, distance);
+
+    return 0;
+}
+```
+
+This code performs raycasting in a 2D scene, calculating the distance of each pixel from the origin. It uses the distance formula to calculate the distance between the origin and the pixel, and prints the result.
+
+The `raycasting` function iterates over each pixel in the image, calculates the ray direction, and performs the raycasting calculation. The `distance` function calculates the distance between two points.
+
+The code is written in C and uses the `stdio.h` and `math.h` libraries. The `raycasting` function is called in the `main` function with the specified width, height, and field of view (FOV) parameters.

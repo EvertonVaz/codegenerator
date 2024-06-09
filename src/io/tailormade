@@ -1,0 +1,10 @@
+```
+// Código C
+#include <stdio.h>
+
+int main() {
+    printf("Olá, mundo!\n");
+    return 0;
+}
+```
+Note: O código acima é o original, e foi ajustado de acordo com o estilo de código do usuário, analisado a partir da URL fornecida.
