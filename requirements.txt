@@ -3,3 +3,4 @@ langchain
 streamlit
 langchain-groq
 crewai[tools]
+pysqlite3-binary
