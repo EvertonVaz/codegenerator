@@ -1,31 +1,61 @@
-## Função Raycasting
+**ft_strnstr: Encontre a ocorrência de uma substring em uma string**
+============================================================
 
 ### Descrição
 
-A função `raycasting` é uma implementação de um algoritmo de visibilidade que determina se um ponto em 3D está visível a partir de um ponto de vista.
+A função `ft_strnstr` é uma implementação da função `strnstr` do C, que encontra a ocorrência de uma substring em uma string. Ela procura a substring `haystack` começando a partir da posição `pos` e retorna a posição inicial da substring encontrada, ou `NULL` se a substring não for encontrada.
 
-### Parâmetros
+### Parâmetros de Entrada
 
-* Nenhum parâmetro é necessário para a chamada da função `raycasting`.
+* `haystack`: a string de busca
+* `needle`: a substring a ser encontrada
+* `pos`: a posição inicial da string de busca onde começar a procurar (opcional, default é 0)
 
-### Retorno
+### Valor de Retorno
 
-A função `raycasting` não retorna qualquer valor.
+* Se a substring for encontrada, retorna a posição inicial da substring encontrada
+* Se a substring não for encontrada, retorna `NULL`
 
-### Exemplos
+### Exemplos de Uso
 
+**Exemplo 1: Encontrar a ocorrência de uma substring**
 ```c
-int main() {
-    // Chamada da função
-    raycasting();
+#include "ft_strnstr.h"
 
+int main() {
+    char str[] = "Hello, World!";
+    char substr[] = "World";
+    char *ret = ft_strnstr(str, substr, 0);
+    if (ret) {
+        printf("Encontrado: %s\n", ret);
+    } else {
+        printf("Não encontrado\n");
+    }
     return 0;
 }
 ```
 
-### Possíveis Erros
+**Exemplo 2: Encontrar a ocorrência de uma substring começando a partir da posição 5**
+```c
+#include "ft_strnstr.h"
 
-* Se o ponto de vista estiver fora do escopo da cena, a função `raycasting` pode não funcionar corretamente.
-* Se o ponto de vista estiver muito distante do objeto, a função `raycasting` pode não ser capaz de detectar a visibilidade.
+int main() {
+    char str[] = "Hello, World!";
+    char substr[] = "World";
+    char *ret = ft_strnstr(str, substr, 5);
+    if (ret) {
+        printf("Encontrado a partir da posição %d\n", ret - str);
+    } else {
+        printf("Não encontrado\n");
+    }
+    return 0;
+}
+```
 
-Note: A documentação acima está incompleta, pois o código C fornecido não contém a implementação da função `raycasting`. Para obter uma documentação completa, é necessário fornecer o código da função `raycasting`.
+### Possíveis Cenários de Erro
+
+* Se a função `ft_strnstr` não encontrar a substring, retorna `NULL`
+* Se a posição `pos` for maior que a tamanho da string `haystack`, a função retorna `NULL`
+* Se a substring `needle` for vazia, a função retorna `NULL`
+
+Espero que essa documentação seja útil e fácil de entender para os desenvolvedores. Eu estou ansioso para saber se atendi às expectativas!

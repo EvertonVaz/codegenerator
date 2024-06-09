@@ -6,15 +6,15 @@
 #    By: etovaz <etovaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 17:34:03 by codespace         #+#    #+#              #
-#    Updated: 2024/06/09 16:19:08 by etovaz           ###   ########.fr        #
+#    Updated: 2024/06/09 18:12:12 by etovaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import os
 import streamlit as st
 from crewai import Crew, Process
-from agents import CodeGenerator
-from tasks import TaskGenerator
+from src.agents import CodeGenerator
+from src.tasks import TaskGenerator
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 

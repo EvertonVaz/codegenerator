@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    toolkit.py                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
+#    By: etovaz <etovaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 13:27:08 by codespace         #+#    #+#              #
-#    Updated: 2024/06/09 15:49:21 by codespace        ###   ########.fr        #
+#    Updated: 2024/06/09 18:50:18 by etovaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,47 +76,26 @@ def norminette_check_tool(function_name):
 	Returns:
 		Uma string com feedback sobre a conformidade com as normas Norminette.
 	"""
-
-	# Cria um arquivo temporário com o código
-	with open("temp.c", "w") as f:
-		f.write(function_name)
-
-	# Executa a norminette no arquivo temporário
-	try:
-		result = subprocess.run(["norminette", "temp.c"], capture_output=True, text=True)
-		output = result.stdout.strip()
-		if output:
-			return f"O código não está em conformidade com as normas Norminette: {output}"
-		else:
-			return "O código está em conformidade com as normas Norminette."
-	except FileNotFoundError:
-		return "O comando 'norminette' não foi encontrado. Certifique-se de que a biblioteca Norminette está instalada."
-	finally:
-		# Exclui o arquivo temporário
-		os.remove("temp.c")
+	with open("./src/io/norminette", "w") as f:
+		f.write("norma")
+	return f"""
+	leia a norma {f}
+	e verifique se a {function_name} criada pelo Code Writer está em conformidade com as normas Norminette.
+	"""
 
 @tool("style_analysis")
-def style_analysis_tool(function_name, github_url):
+def style_analysis_tool(function_name):
 	"""
 	Analisa o estilo do código em relação ao estilo do usuário.
 
 	Args:
 		function_name: O código C a ser analisado.
-		github_url: URL do perfil do GitHub do usuário.
 
 	Returns:
 		Uma string com feedback sobre o estilo do código.
 	"""
 
-	# Simula a análise do estilo do código em relação ao estilo do usuário.
-	# Aqui você pode implementar a lógica para analisar o estilo do código.
-	# Por exemplo, você pode usar uma biblioteca de análise de código ou um rastreador de código.
-
-	# Substitua esta lógica com a sua própria implementação.
-	if github_url:
-		return "O código está de acordo com o estilo de código do seu perfil no GitHub. "
-	else:
-		return "O código está escrito com um estilo de código padrão."
+	return f"Utilize o clean code para avaliar a {function_name}."
 
 @tool("documentation_generator")
 def documentation_generator_tool():
@@ -130,7 +109,6 @@ def documentation_generator_tool():
 		Uma string com a documentação do código em Markdown.
 	"""
 
-	# Substitua esta lógica com a sua própria implementação.
 	documentation = f"""
 	## Função function_name
 

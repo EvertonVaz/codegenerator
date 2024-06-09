@@ -3,15 +3,14 @@
 #                                                         :::      ::::::::    #
 #    agents.py                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
+#    By: etovaz <etovaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 17:44:07 by codespace         #+#    #+#              #
-#    Updated: 2024/06/09 17:30:11 by codespace        ###   ########.fr        #
+#    Updated: 2024/06/09 18:57:07 by etovaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 from crewai import Agent
-from toolkit import function_info_tool, documentation_generator_tool
 
 class CodeGenerator:
     """
@@ -31,7 +30,8 @@ class CodeGenerator:
             llm=self.model,
             verbose=True,
             memory=True,
-            allow_delegation=True
+            allow_delegation=False,
+            max_iter=5
         )
     )
 
@@ -45,7 +45,8 @@ class CodeGenerator:
             backstory="""
                 Você é um especialista nas normas Norminette, com um profundo conhecimento dos requisitos de estilo, formatação e organização de código. Você está comprometido em garantir que o código gerado seja consistente e profissional. Você pode identificar qualquer violação das normas Norminette e fornecer sugestões precisas para corrigir os erros.
             """,
-            allow_delegation=False
+            allow_delegation=False,
+            max_iter=5
         )
     )
 
@@ -59,7 +60,8 @@ class CodeGenerator:
             backstory="""
                 Você é um revisor de código meticuloso e experiente, com uma visão crítica e perspicaz. Você pode identificar potenciais problemas e formular perguntas relevantes para garantir que o código seja robusto, bem escrito e livre de erros. Você se concentra em questões de segurança, performance, legibilidade e manutenção.
             """,
-            allow_delegation=False
+            allow_delegation=False,
+            max_iter=5
         )
     )
 
@@ -73,7 +75,8 @@ class CodeGenerator:
             backstory="""
                 Você é um especialista em estilo de código, com um profundo conhecimento das diferentes convenções de formatação, nomenclatura e estrutura usadas pelos programadores. Você pode analisar o código e adaptá-lo para corresponder ao estilo de código preferido do usuário, garantindo que o código gerado seja consistente com o trabalho anterior do usuário.
             """,
-            allow_delegation=False
+            allow_delegation=False,
+            max_iter=5
         )
     )
 
@@ -87,6 +90,7 @@ class CodeGenerator:
             backstory="""
                 Você é um mestre da documentação, com habilidades excepcionais para criar documentação clara, concisa e informativa em Markdown. Você pode gerar documentação completa para funções C, incluindo descrições detalhadas, exemplos de uso, informações sobre parâmetros de entrada e saída, e possíveis erros. Você se esforça para tornar a documentação fácil de entender e usar para outros desenvolvedores.
             """,
-            allow_delegation=False
+            allow_delegation=False,
+            max_iter=5
         )
     )
