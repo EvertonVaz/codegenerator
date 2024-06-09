@@ -1,3 +1,5 @@
 crewai
 langchain
 streamlit
+langchain-groq
+crewai[tools]
